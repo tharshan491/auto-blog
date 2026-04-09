@@ -66,3 +66,37 @@
 2026-04-09 21:12:41,640 [INFO] Logged: voxcpm-python-project
 2026-04-09 21:12:41,640 [INFO] ✓ Published: https://tharshan491.github.io/auto-blog/voxcpm-python-project/
 2026-04-09 21:12:41,640 [INFO] AutoBlog complete.
+2026-04-09 22:21:49,977 [INFO] AutoBlog started: 2026-04-09T22:21:49.977103
+2026-04-09 22:21:49,977 [INFO] STEP 1 › Discovering topics…
+2026-04-09 22:21:51,017 [WARNING] Reddit r/programming: Expecting value: line 1 column 1 (char 0)
+2026-04-09 22:21:51,073 [WARNING] Reddit r/learnpython: Expecting value: line 1 column 1 (char 0)
+2026-04-09 22:21:51,132 [WARNING] Reddit r/webdev: Expecting value: line 1 column 1 (char 0)
+2026-04-09 22:21:51,182 [WARNING] Reddit r/javascript: Expecting value: line 1 column 1 (char 0)
+2026-04-09 22:21:51,229 [WARNING] Reddit r/devops: Expecting value: line 1 column 1 (char 0)
+2026-04-09 22:21:51,445 [INFO] Discovered 19 unique topics.
+2026-04-09 22:21:51,447 [INFO] Selected: ['Opendataloader Pdf – Java Project', 'Superpowers – Shell Project']
+2026-04-09 22:21:51,447 [INFO] ── Processing: Opendataloader Pdf – Java Project
+2026-04-09 22:21:51,517 [INFO] Using template fallback.
+2026-04-09 22:21:51,518 [INFO] Published: 2026-04-09-opendataloader-pdf-java-project.md
+2026-04-09 22:21:52,760 [INFO]   discord      ok
+2026-04-09 22:21:52,760 [INFO]   telegram     ok
+2026-04-09 22:21:52,760 [INFO]   slack        skipped
+2026-04-09 22:21:52,760 [INFO]   devto        ok
+2026-04-09 22:21:52,760 [INFO]   mastodon     skipped
+2026-04-09 22:21:52,760 [INFO]   bluesky      skipped
+2026-04-09 22:21:52,760 [INFO]   medium       skipped
+2026-04-09 22:21:52,761 [INFO] Logged: opendataloader-pdf-java-project
+2026-04-09 22:21:52,761 [INFO] ✓ Published: https://devpulseblog.netlify.app/opendataloader-pdf-java-project/
+2026-04-09 22:21:52,761 [INFO] ── Processing: Superpowers – Shell Project
+2026-04-09 22:21:52,790 [INFO] Using template fallback.
+2026-04-09 22:21:52,790 [INFO] Published: 2026-04-09-superpowers-shell-project.md
+2026-04-09 22:21:53,712 [INFO]   discord      ok
+2026-04-09 22:21:53,712 [INFO]   telegram     ok
+2026-04-09 22:21:53,712 [INFO]   slack        skipped
+2026-04-09 22:21:53,712 [INFO]   devto        ok
+2026-04-09 22:21:53,712 [INFO]   mastodon     skipped
+2026-04-09 22:21:53,712 [INFO]   bluesky      skipped
+2026-04-09 22:21:53,712 [INFO]   medium       skipped
+2026-04-09 22:21:53,713 [INFO] Logged: superpowers-shell-project
+2026-04-09 22:21:53,713 [INFO] ✓ Published: https://devpulseblog.netlify.app/superpowers-shell-project/
+2026-04-09 22:21:53,713 [INFO] AutoBlog complete.

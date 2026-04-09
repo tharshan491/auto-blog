@@ -163,12 +163,96 @@
         "views": 0,
         "clicks": 0
       }
+    },
+    {
+      "slug": "opendataloader-pdf-java-project",
+      "title": "Opendataloader Pdf – Java Project",
+      "url": "https://devpulseblog.netlify.app/opendataloader-pdf-java-project/",
+      "source": "github_trending",
+      "published_at": "2026-04-09T22:21:52.760999",
+      "shares": [
+        {
+          "platform": "discord",
+          "status": "ok"
+        },
+        {
+          "platform": "telegram",
+          "status": "ok"
+        },
+        {
+          "platform": "slack",
+          "status": "skipped"
+        },
+        {
+          "platform": "devto",
+          "status": "ok"
+        },
+        {
+          "platform": "mastodon",
+          "status": "skipped"
+        },
+        {
+          "platform": "bluesky",
+          "status": "skipped"
+        },
+        {
+          "platform": "medium",
+          "status": "skipped"
+        }
+      ],
+      "analytics": {
+        "views": 0,
+        "clicks": 0
+      }
+    },
+    {
+      "slug": "superpowers-shell-project",
+      "title": "Superpowers – Shell Project",
+      "url": "https://devpulseblog.netlify.app/superpowers-shell-project/",
+      "source": "github_trending",
+      "published_at": "2026-04-09T22:21:53.712949",
+      "shares": [
+        {
+          "platform": "discord",
+          "status": "ok"
+        },
+        {
+          "platform": "telegram",
+          "status": "ok"
+        },
+        {
+          "platform": "slack",
+          "status": "skipped"
+        },
+        {
+          "platform": "devto",
+          "status": "ok"
+        },
+        {
+          "platform": "mastodon",
+          "status": "skipped"
+        },
+        {
+          "platform": "bluesky",
+          "status": "skipped"
+        },
+        {
+          "platform": "medium",
+          "status": "skipped"
+        }
+      ],
+      "analytics": {
+        "views": 0,
+        "clicks": 0
+      }
     }
   ],
   "slugs": [
     "hermes-agent-python-project",
     "andrej-karpathy-skills",
     "deeptutor-python-project",
-    "voxcpm-python-project"
+    "voxcpm-python-project",
+    "opendataloader-pdf-java-project",
+    "superpowers-shell-project"
   ]
 }
