@@ -81,10 +81,94 @@
         "views": 0,
         "clicks": 0
       }
+    },
+    {
+      "slug": "deeptutor-python-project",
+      "title": "Deeptutor – Python Project",
+      "url": "https://tharshan491.github.io/auto-blog/deeptutor-python-project/",
+      "source": "github_trending",
+      "published_at": "2026-04-09T21:12:38.996422",
+      "shares": [
+        {
+          "platform": "discord",
+          "status": "ok"
+        },
+        {
+          "platform": "telegram",
+          "status": "ok"
+        },
+        {
+          "platform": "slack",
+          "status": "skipped"
+        },
+        {
+          "platform": "devto",
+          "status": "ok"
+        },
+        {
+          "platform": "mastodon",
+          "status": "skipped"
+        },
+        {
+          "platform": "bluesky",
+          "status": "skipped"
+        },
+        {
+          "platform": "medium",
+          "status": "skipped"
+        }
+      ],
+      "analytics": {
+        "views": 0,
+        "clicks": 0
+      }
+    },
+    {
+      "slug": "voxcpm-python-project",
+      "title": "Voxcpm – Python Project",
+      "url": "https://tharshan491.github.io/auto-blog/voxcpm-python-project/",
+      "source": "github_trending",
+      "published_at": "2026-04-09T21:12:41.639867",
+      "shares": [
+        {
+          "platform": "discord",
+          "status": "ok"
+        },
+        {
+          "platform": "telegram",
+          "status": "ok"
+        },
+        {
+          "platform": "slack",
+          "status": "skipped"
+        },
+        {
+          "platform": "devto",
+          "status": "ok"
+        },
+        {
+          "platform": "mastodon",
+          "status": "skipped"
+        },
+        {
+          "platform": "bluesky",
+          "status": "skipped"
+        },
+        {
+          "platform": "medium",
+          "status": "skipped"
+        }
+      ],
+      "analytics": {
+        "views": 0,
+        "clicks": 0
+      }
     }
   ],
   "slugs": [
     "hermes-agent-python-project",
-    "andrej-karpathy-skills"
+    "andrej-karpathy-skills",
+    "deeptutor-python-project",
+    "voxcpm-python-project"
   ]
 }

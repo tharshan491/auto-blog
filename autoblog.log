@@ -32,3 +32,37 @@
 2026-04-09 19:37:16,886 [INFO] Logged: andrej-karpathy-skills
 2026-04-09 19:37:16,886 [INFO] ✓ Published: https://tharshan491.github.io/auto-blog/andrej-karpathy-skills/
 2026-04-09 19:37:16,886 [INFO] AutoBlog complete.
+2026-04-09 21:12:32,923 [INFO] AutoBlog started: 2026-04-09T21:12:32.923346
+2026-04-09 21:12:32,923 [INFO] STEP 1 › Discovering topics…
+2026-04-09 21:12:34,187 [WARNING] Reddit r/programming: Expecting value: line 1 column 1 (char 0)
+2026-04-09 21:12:34,280 [WARNING] Reddit r/learnpython: Expecting value: line 1 column 1 (char 0)
+2026-04-09 21:12:34,402 [WARNING] Reddit r/webdev: Expecting value: line 1 column 1 (char 0)
+2026-04-09 21:12:34,511 [WARNING] Reddit r/javascript: Expecting value: line 1 column 1 (char 0)
+2026-04-09 21:12:34,622 [WARNING] Reddit r/devops: Expecting value: line 1 column 1 (char 0)
+2026-04-09 21:12:34,828 [INFO] Discovered 19 unique topics.
+2026-04-09 21:12:34,830 [INFO] Selected: ['Deeptutor – Python Project', 'Voxcpm – Python Project']
+2026-04-09 21:12:34,831 [INFO] ── Processing: Deeptutor – Python Project
+2026-04-09 21:12:34,906 [INFO] Using template fallback.
+2026-04-09 21:12:34,907 [INFO] Published: 2026-04-09-deeptutor-python-project.md
+2026-04-09 21:12:38,995 [INFO]   discord      ok
+2026-04-09 21:12:38,996 [INFO]   telegram     ok
+2026-04-09 21:12:38,996 [INFO]   slack        skipped
+2026-04-09 21:12:38,996 [INFO]   devto        ok
+2026-04-09 21:12:38,996 [INFO]   mastodon     skipped
+2026-04-09 21:12:38,996 [INFO]   bluesky      skipped
+2026-04-09 21:12:38,996 [INFO]   medium       skipped
+2026-04-09 21:12:38,996 [INFO] Logged: deeptutor-python-project
+2026-04-09 21:12:38,996 [INFO] ✓ Published: https://tharshan491.github.io/auto-blog/deeptutor-python-project/
+2026-04-09 21:12:38,996 [INFO] ── Processing: Voxcpm – Python Project
+2026-04-09 21:12:39,070 [INFO] Using template fallback.
+2026-04-09 21:12:39,071 [INFO] Published: 2026-04-09-voxcpm-python-project.md
+2026-04-09 21:12:41,639 [INFO]   discord      ok
+2026-04-09 21:12:41,639 [INFO]   telegram     ok
+2026-04-09 21:12:41,639 [INFO]   slack        skipped
+2026-04-09 21:12:41,639 [INFO]   devto        ok
+2026-04-09 21:12:41,639 [INFO]   mastodon     skipped
+2026-04-09 21:12:41,639 [INFO]   bluesky      skipped
+2026-04-09 21:12:41,639 [INFO]   medium       skipped
+2026-04-09 21:12:41,640 [INFO] Logged: voxcpm-python-project
+2026-04-09 21:12:41,640 [INFO] ✓ Published: https://tharshan491.github.io/auto-blog/voxcpm-python-project/
+2026-04-09 21:12:41,640 [INFO] AutoBlog complete.
