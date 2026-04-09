@@ -1,0 +1,105 @@
+---
+layout: default
+---
+<div class="container" style="padding-top:2rem">
+  <div class="layout-grid">
+    <article>
+      <header class="post-header">
+        {% if page.image %}
+        <img class="post-hero-img" src="{{ page.image }}" alt="{{ page.title }}" loading="lazy" />
+        {% endif %}
+        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap">
+          {% if page.categories.first %}
+          <a class="post-category" href="{{ '/categories/' | relative_url }}">{{ page.categories.first }}</a>
+          {% endif %}
+          {% for tag in page.tags limit:3 %}
+          <a class="post-tag" href="{{ '/tags/' | relative_url }}">#{{ tag }}</a>
+          {% endfor %}
+        </div>
+        <h1 class="post-title">{{ page.title }}</h1>
+        {% if page.description %}
+        <p class="post-description">{{ page.description }}</p>
+        {% endif %}
+        <div class="post-info">
+          <span class="author">✍️ {{ page.author | default: "AutoBlog" }}</span>
+          <time>📅 {{ page.date | date: "%B %d, %Y" }}</time>
+          <span>📖 {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+        </div>
+      </header>
+
+      <div class="post-content">
+        {{ content }}
+      </div>
+
+      <div class="share-bar">
+        <h4>Share this article</h4>
+        <a class="share-btn twitter"
+           href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}"
+           target="_blank" rel="noopener">𝕏 Twitter</a>
+        <a class="share-btn linkedin"
+           href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}"
+           target="_blank" rel="noopener">in LinkedIn</a>
+        <a class="share-btn"
+           href="https://reddit.com/submit?url={{ page.url | absolute_url | url_encode }}&title={{ page.title | url_encode }}"
+           target="_blank" rel="noopener">🟠 Reddit</a>
+        <button class="share-btn copy">🔗 Copy Link</button>
+      </div>
+
+      <div class="comments-section">
+        <h3 class="comments-title">💬 Comments</h3>
+        <script src="https://giscus.app/client.js"
+          data-repo="tharshan491/auto-blog"
+          data-repo-id=""
+          data-category="General"
+          data-category-id=""
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="dark"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+
+      <nav style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)">
+        {% if page.previous.url %}
+        <a href="{{ page.previous.url | relative_url }}" style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:1rem;text-decoration:none;color:var(--text)">
+          <div style="font-size:0.75rem;color:var(--text2);margin-bottom:0.4rem">← Previous</div>
+          <div style="font-size:0.9rem;font-weight:600">{{ page.previous.title | truncate: 50 }}</div>
+        </a>
+        {% else %}<div></div>{% endif %}
+        {% if page.next.url %}
+        <a href="{{ page.next.url | relative_url }}" style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:1rem;text-decoration:none;color:var(--text);text-align:right">
+          <div style="font-size:0.75rem;color:var(--text2);margin-bottom:0.4rem">Next →</div>
+          <div style="font-size:0.9rem;font-weight:600">{{ page.next.title | truncate: 50 }}</div>
+        </a>
+        {% endif %}
+      </nav>
+    </article>
+
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <div class="widget-title">📋 On this page</div>
+        <div id="toc" style="font-size:0.85rem;line-height:2"></div>
+      </div>
+      {% if page.tags.size > 0 %}
+      <div class="sidebar-widget">
+        <div class="widget-title">🏷️ Tags</div>
+        <div class="tags-cloud">
+          {% for tag in page.tags %}
+          <a class="post-tag" href="{{ '/tags/' | relative_url }}">#{{ tag }}</a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+      <div class="sidebar-widget">
+        <div class="widget-title">📚 More Articles</div>
+        <ul class="trending-list">
+          {% assign related = site.posts | where_exp: "p", "p.url != page.url" %}
+          {% for post in related limit:5 %}
+          <li>
+            <span class="trending-num">0{{ forloop.index }}</span>
+            <a href="{{ post.url | relative_url }}">{{ post.t
