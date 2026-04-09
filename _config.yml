@@ -1,0 +1,56 @@
+title:       "DevPulse Blog"
+description: "Daily coding tutorials auto-generated from trending topics."
+url:         "https://devpulseblog.netlify.app"
+baseurl:     ""
+author:      "AutoBlog"
+lang:        "en-US"
+
+# Theme
+theme: minima
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Pagination
+paginate:      9
+paginate_path: "/page:num/"
+
+# Google Analytics — add your ID here after getting it from analytics.google.com
+# google_analytics: "G-XXXXXXXXXX"
+
+# Giscus Comments — get IDs from giscus.app
+# giscus_repo:        "tharshan491/auto-blog"
+# giscus_repo_id:     "R_xxxxxxxxx"
+# giscus_category_id: "DIC_xxxxxxxxx"
+
+# SEO
+twitter:
+  username: yourhandle
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .github
+  - netlify.toml
+  - scripts/
+  - requirements.txt
+  - README.md
+  - article_log.json
+
+# Front matter defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
