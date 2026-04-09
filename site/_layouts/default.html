@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}" />
+  {% if site.google_analytics %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+  {% endif %}
+</head>
+<body>
+{% if page.layout == 'post' %}<div id="reading-progress"></div>{% endif %}
+<nav class="navbar">
+  <a class="navbar-brand" href="{{ '/' | relative_url }}">Dev<span>Pulse</span></a>
+  <ul class="navbar-links">
+    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+    <li><a href="{{ '/categories/' | relative_url }}">Categories</a></li>
+    <li><a href="{{ '/tags/' | relative_url }}">Tags</a></li>
+    <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+  </ul>
+  <div class="navbar-actions">
+    <button class="search-btn" id="search-open-btn">🔍 Search <kbd>⌘K</kbd></button>
+    <button class="theme-toggle" id="theme-toggle">☀️</button>
+  </div>
+</nav>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <span>🔍</span>
+      <input type="text" id="search-input" placeholder="Search articles…" autocomplete="off" />
+      <button class="search-close" id="search-close">ESC</button>
+    </div>
+    <div id="search-results"></div>
+  </div>
+</div>
+{{ content }}
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="navbar-brand" href="{{ '/' | relative_url }}">Dev<span>Pulse</span></a>
+      <p>Daily programming articles auto-generated from trending topics.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Latest Articles</a></li>
+        <li><a href="{{ '/categories/' | relative_url }}">Categories</a></li>
+        <li><a href="{{ '/tags/' | relative_url }}">Tags</a></li>
+        <li><a href="{{ '/feed.xml' | relative_url }}">RSS Feed</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="{{ '/categories/' | relative_url }}">Tutorials</a></li>
+        <li><a href="{{ '/categories/' | relative_url }}">Projects</a></li>
+        <li><a href="{{ '/categories/' | relative_url }}">Tools</a></li>
+        <li><a href="{{ '/categories/' | relative_url }}">AI & Automation</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© {{ 'now' | date: "%Y" }} DevPulse Blog · Built with AutoBlog 🤖</p>
+    <div class="footer-links">
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <a href="https://github.com/tharshan491/auto-blog" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+<button id="back-to-top">↑</button>
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>
