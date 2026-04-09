@@ -7,7 +7,6 @@ permalink: /categories/
 <div class="container" style="padding:3rem 0">
   <div class="section-header">
     <h1 class="section-title"><span class="dot"></span> All Categories</h1>
-    <span style="font-size:0.85rem;color:var(--text2)">{{ site.posts | map: 'categories' | flatten | uniq | size }} categories</span>
   </div>
 
   {% assign all_cats = site.posts | map: 'categories' | flatten | uniq | sort %}
@@ -15,10 +14,8 @@ permalink: /categories/
   <div class="categories-grid">
     {% for cat in all_cats %}
     {% assign cat_posts = site.posts | where_exp: "p", "p.categories contains cat" %}
-    {% assign icons = "🐍,⚡,🤖,🛠️,🚀,💡,🔧,🌐,📊,🎯" | split: "," %}
-    {% assign icon = icons[forloop.index0 | modulo: 10] %}
     <a class="category-card" href="#{{ cat | slugify }}">
-      <span class="cat-icon">{{ icon }}</span>
+      <span class="cat-icon">📂</span>
       <span class="cat-name">{{ cat | replace: '-', ' ' | capitalize }}</span>
       <span class="cat-count">{{ cat_posts | size }} articles</span>
     </a>
