@@ -1,7 +1,7 @@
 [build]
   base    = "site"
   command = "gem install bundler && bundle install && bundle exec jekyll build"
-  publish = "site/_site"
+  publish = "_site"
 
 [build.environment]
   JEKYLL_ENV = "production"
