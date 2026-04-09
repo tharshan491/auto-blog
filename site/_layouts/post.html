@@ -102,4 +102,37 @@ layout: default
           {% for post in related limit:5 %}
           <li>
             <span class="trending-num">0{{ forloop.index }}</span>
-            <a href="{{ post.url | relative_url }}">{{ post.t
+            <a href="{{ post.url | relative_url }}">{{ post.title | truncate: 50 }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+{% raw %}
+<script>
+(function() {
+  var toc = document.getElementById('toc');
+  var headings = document.querySelectorAll('.post-content h2, .post-content h3');
+  if (!toc || !headings.length) return;
+  headings.forEach(function(h, i) {
+    var id = 'heading-' + i;
+    h.id = id;
+    var a = document.createElement('a');
+    a.href = '#' + id;
+    a.textContent = h.textContent;
+    a.style.display = 'block';
+    a.style.color = 'var(--text2)';
+    a.style.textDecoration = 'none';
+    a.style.padding = '0.15rem 0';
+    a.style.paddingLeft = h.tagName === 'H3' ? '1rem' : '0';
+    a.style.transition = 'color 0.2s';
+    a.addEventListener('mouseover', function() { a.style.color = 'var(--accent)'; });
+    a.addEventListener('mouseout',  function() { a.style.color = 'var(--text2)'; });
+    toc.appendChild(a);
+  });
+})();
+</script>
+{% endraw %}
