@@ -1,0 +1,99 @@
+name: AutoBlog – Generate, Publish & Share
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+    inputs:
+      max_topics:
+        description: "Number of articles to generate (1-5)"
+        required: false
+        default: "2"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  autoblog:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run AutoBlog pipeline
+        env:
+          MAX_TOPICS: ${{ github.event.inputs.max_topics || '2' }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          PEXELS_API_KEY:      ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY:     ${{ secrets.PIXABAY_API_KEY }}
+          HF_TOKEN:            ${{ secrets.HF_TOKEN }}
+          TWITTER_API_KEY:           ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET:        ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN:      ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET:     ${{ secrets.TWITTER_ACCESS_SECRET }}
+          LINKEDIN_ACCESS_TOKEN:     ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_USER_ID:          ${{ secrets.LINKEDIN_USER_ID }}
+          REDDIT_CLIENT_ID:          ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET:      ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME:           ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD:           ${{ secrets.REDDIT_PASSWORD }}
+          REDDIT_SUBREDDIT:          ${{ vars.REDDIT_SUBREDDIT || 'programming' }}
+          MASTODON_ACCESS_TOKEN:     ${{ secrets.MASTODON_ACCESS_TOKEN }}
+          MASTODON_INSTANCE:         ${{ vars.MASTODON_INSTANCE || 'https://mastodon.social' }}
+          BLUESKY_HANDLE:            ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD:      ${{ secrets.BLUESKY_APP_PASSWORD }}
+          TELEGRAM_BOT_TOKEN:        ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:          ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL:       ${{ secrets.DISCORD_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL:         ${{ secrets.SLACK_WEBHOOK_URL }}
+          DEVTO_API_KEY:             ${{ secrets.DEVTO_API_KEY }}
+          HASHNODE_TOKEN:            ${{ secrets.HASHNODE_TOKEN }}
+          HASHNODE_PUBLICATION_ID:   ${{ secrets.HASHNODE_PUBLICATION_ID }}
+          MEDIUM_INTEGRATION_TOKEN:  ${{ secrets.MEDIUM_INTEGRATION_TOKEN }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_ID:          ${{ secrets.FACEBOOK_PAGE_ID }}
+          PINTEREST_ACCESS_TOKEN:    ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID:        ${{ secrets.PINTEREST_BOARD_ID }}
+        run: python scripts/main.py
+
+      - name: Commit and push new articles
+        run: |
+          git config user.name  "AutoBlog Bot"
+          git config user.email "autoblog-bot@users.noreply.github.com"
+          git add site/_posts/ article_log.json autoblog.log || true
+          git diff --cached --quiet || git commit -m "chore: auto-publish articles [$(date -u '+%Y-%m-%d %H:%M')] [skip ci]"
+          git push
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Build Jekyll site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./site
+          destination: ./_site
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
