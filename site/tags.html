@@ -1,0 +1,48 @@
+---
+layout: default
+title: All Tags
+permalink: /tags/
+---
+
+<div class="container" style="padding:3rem 0">
+  <div class="section-header">
+    <h1 class="section-title"><span class="dot"></span> All Tags</h1>
+    <span style="font-size:0.85rem;color:var(--text2)">{{ site.tags | size }} tags</span>
+  </div>
+
+  <div class="tags-cloud" style="margin-bottom:3rem;gap:0.75rem">
+    {% assign all_tags = site.posts | map: 'tags' | flatten | uniq | sort %}
+    {% for tag in all_tags %}
+    {% assign tag_posts = site.posts | where_exp: "p", "p.tags contains tag" %}
+    <a class="post-tag" href="#{{ tag | slugify }}"
+       style="padding:0.3rem 0.8rem;font-size:0.85rem">
+      #{{ tag }} <span style="opacity:0.6">({{ tag_posts | size }})</span>
+    </a>
+    {% endfor %}
+  </div>
+
+  {% for tag in all_tags %}
+  {% assign tag_posts = site.posts | where_exp: "p", "p.tags contains tag" %}
+  <div id="{{ tag | slugify }}" style="margin-bottom:2.5rem">
+    <div class="section-header">
+      <h2 class="section-title" style="font-size:1.1rem">
+        <span class="dot"></span>
+        #{{ tag }}
+      </h2>
+      <span style="font-size:0.85rem;color:var(--text2)">{{ tag_posts | size }} posts</span>
+    </div>
+    {% for post in tag_posts limit:3 %}
+    <a href="{{ post.url | relative_url }}"
+       style="display:flex;align-items:center;gap:1rem;padding:0.75rem;border-radius:8px;text-decoration:none;color:var(--text);transition:background 0.2s;margin-bottom:0.5rem"
+       onmouseover="this.style.background='var(--bg3)'"
+       onmouseout="this.style.background='transparent'">
+      <span style="font-size:0.8rem;color:var(--text2);font-family:var(--font-code);min-width:90px">
+        {{ post.date | date: "%b %d, %Y" }}
+      </span>
+      <span style="font-weight:500">{{ post.title }}</span>
+      <span style="margin-left:auto;color:var(--accent);font-size:0.85rem">→</span>
+    </a>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>
