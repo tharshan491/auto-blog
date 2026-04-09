@@ -1,0 +1,34 @@
+2026-04-09 19:37:15,246 [INFO] AutoBlog started: 2026-04-09T19:37:15.246346
+2026-04-09 19:37:15,246 [INFO] STEP 1 › Discovering topics…
+2026-04-09 19:37:16,307 [WARNING] Reddit r/programming: Expecting value: line 1 column 1 (char 0)
+2026-04-09 19:37:16,367 [WARNING] Reddit r/learnpython: Expecting value: line 1 column 1 (char 0)
+2026-04-09 19:37:16,419 [WARNING] Reddit r/webdev: Expecting value: line 1 column 1 (char 0)
+2026-04-09 19:37:16,471 [WARNING] Reddit r/javascript: Expecting value: line 1 column 1 (char 0)
+2026-04-09 19:37:16,530 [WARNING] Reddit r/devops: Expecting value: line 1 column 1 (char 0)
+2026-04-09 19:37:16,818 [INFO] Discovered 19 unique topics.
+2026-04-09 19:37:16,821 [INFO] Selected: ['Hermes Agent – Python Project', 'Andrej Karpathy Skills']
+2026-04-09 19:37:16,821 [INFO] ── Processing: Hermes Agent – Python Project
+2026-04-09 19:37:16,854 [INFO] Using template fallback.
+2026-04-09 19:37:16,854 [INFO] Published: 2026-04-09-hermes-agent-python-project.md
+2026-04-09 19:37:16,855 [INFO]   discord      skipped
+2026-04-09 19:37:16,855 [INFO]   telegram     skipped
+2026-04-09 19:37:16,855 [INFO]   slack        skipped
+2026-04-09 19:37:16,855 [INFO]   devto        skipped
+2026-04-09 19:37:16,855 [INFO]   mastodon     skipped
+2026-04-09 19:37:16,855 [INFO]   bluesky      skipped
+2026-04-09 19:37:16,855 [INFO]   medium       skipped
+2026-04-09 19:37:16,855 [INFO] Logged: hermes-agent-python-project
+2026-04-09 19:37:16,855 [INFO] ✓ Published: https://tharshan491.github.io/auto-blog/hermes-agent-python-project/
+2026-04-09 19:37:16,855 [INFO] ── Processing: Andrej Karpathy Skills
+2026-04-09 19:37:16,885 [INFO] Using template fallback.
+2026-04-09 19:37:16,886 [INFO] Published: 2026-04-09-andrej-karpathy-skills.md
+2026-04-09 19:37:16,886 [INFO]   discord      skipped
+2026-04-09 19:37:16,886 [INFO]   telegram     skipped
+2026-04-09 19:37:16,886 [INFO]   slack        skipped
+2026-04-09 19:37:16,886 [INFO]   devto        skipped
+2026-04-09 19:37:16,886 [INFO]   mastodon     skipped
+2026-04-09 19:37:16,886 [INFO]   bluesky      skipped
+2026-04-09 19:37:16,886 [INFO]   medium       skipped
+2026-04-09 19:37:16,886 [INFO] Logged: andrej-karpathy-skills
+2026-04-09 19:37:16,886 [INFO] ✓ Published: https://tharshan491.github.io/auto-blog/andrej-karpathy-skills/
+2026-04-09 19:37:16,886 [INFO] AutoBlog complete.

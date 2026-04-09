@@ -1,0 +1,90 @@
+{
+  "articles": [
+    {
+      "slug": "hermes-agent-python-project",
+      "title": "Hermes Agent – Python Project",
+      "url": "https://tharshan491.github.io/auto-blog/hermes-agent-python-project/",
+      "source": "github_trending",
+      "published_at": "2026-04-09T19:37:16.855515",
+      "shares": [
+        {
+          "platform": "discord",
+          "status": "skipped"
+        },
+        {
+          "platform": "telegram",
+          "status": "skipped"
+        },
+        {
+          "platform": "slack",
+          "status": "skipped"
+        },
+        {
+          "platform": "devto",
+          "status": "skipped"
+        },
+        {
+          "platform": "mastodon",
+          "status": "skipped"
+        },
+        {
+          "platform": "bluesky",
+          "status": "skipped"
+        },
+        {
+          "platform": "medium",
+          "status": "skipped"
+        }
+      ],
+      "analytics": {
+        "views": 0,
+        "clicks": 0
+      }
+    },
+    {
+      "slug": "andrej-karpathy-skills",
+      "title": "Andrej Karpathy Skills",
+      "url": "https://tharshan491.github.io/auto-blog/andrej-karpathy-skills/",
+      "source": "github_trending",
+      "published_at": "2026-04-09T19:37:16.886493",
+      "shares": [
+        {
+          "platform": "discord",
+          "status": "skipped"
+        },
+        {
+          "platform": "telegram",
+          "status": "skipped"
+        },
+        {
+          "platform": "slack",
+          "status": "skipped"
+        },
+        {
+          "platform": "devto",
+          "status": "skipped"
+        },
+        {
+          "platform": "mastodon",
+          "status": "skipped"
+        },
+        {
+          "platform": "bluesky",
+          "status": "skipped"
+        },
+        {
+          "platform": "medium",
+          "status": "skipped"
+        }
+      ],
+      "analytics": {
+        "views": 0,
+        "clicks": 0
+      }
+    }
+  ],
+  "slugs": [
+    "hermes-agent-python-project",
+    "andrej-karpathy-skills"
+  ]
+}
