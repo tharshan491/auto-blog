@@ -1,14 +1,34 @@
 title: "DevPulse Blog"
 description: "Daily coding tutorials auto-generated from trending topics."
-url: "https://tharshan491.github.io"
-baseurl: "/auto-blog"
+url: "https://devpulseblog.netlify.app"
+baseurl: ""
+author: "AutoBlog"
+lang: "en-US"
 theme: minima
 markdown: kramdown
+highlighter: rouge
 permalink: /:title/
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-paginate: 10
+  - jekyll-paginate
+paginate: 9
 paginate_path: "/page:num/"
-exclude: [Gemfile, Gemfile.lock, node_modules, vendor, .github]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .github
+  - netlify.toml
+  - scripts/
+  - requirements.txt
+  - README.md
+  - article_log.json
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
