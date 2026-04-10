@@ -69,7 +69,6 @@ def _template(topic, atype, context, so_qs):
     kw    = ", ".join(topic.get("keywords", []))
     src   = topic.get("source","")
     faq   = "\n".join(f"- {q}" for q in so_qs[:5]) if so_qs else "- No FAQs available."
-
     sections = {
         "beginner tutorial": [
             "Introduction", "Prerequisites", "Installation & Setup",
@@ -92,25 +91,21 @@ def _template(topic, atype, context, so_qs):
             "Tools & Libraries", "Real-World Examples", "Conclusion"
         ],
     }
-
     secs = sections.get(atype, sections["beginner tutorial"])
     toc  = "\n".join(f"- [{s}](#{s.lower().replace(' ','-')})" for s in secs)
-
     body = ""
     for s in secs:
         body += f"\n## {s}\n\n"
         if s == "Introduction" and context:
             body += context[:300] + "\n\n"
         body += f"This section covers **{s.lower()}** for {title}. "
-        body += f"Whether you are a beginner or experienced developer, mastering {title} will boost your skills.\n\n"
+        body += f"Whether you're a beginner or experienced developer, mastering {title} will boost your skills.\n\n"
         if s in ("Code Examples", "Step-by-Step Guide", "Installation & Setup"):
-            body += f"```bash\n# Example for {title}\npip install example-package\nprint('Hello from {title}!')\n```\n\n"
-
+            body += f"```bash\n# Example for {title}\npip install example-package\n```\n\n"
     source_note = f"\n> 📡 *Topic discovered from {src}*\n" if src else ""
-
     return f"""# {title}: Complete {atype.title()} Guide
 
-> **Last updated:** {datetime.utcnow().strftime("%B %d, %Y")} · **Level:** Beginner to Advanced · **Keywords:** {kw}
+> **Last updated:** {datetime.utcnow().strftime("%B %d, %Y")} · **Keywords:** {kw}
 {source_note}
 ## Table of Contents
 {toc}
@@ -143,20 +138,12 @@ class ArticleGenerator:
         log.info("Generating '%s' as '%s'", title, atype)
 
         prompt = (
-            f"Write a detailed, SEO-optimised programming article in Markdown.\n"
-            f"Title: {title}\n"
-            f"Type: {atype}\n"
+            f"Write a detailed SEO-optimised programming article in Markdown.\n"
+            f"Title: {title}\nType: {atype}\n"
             f"Keywords: {', '.join(topic.get('keywords',[]))}\n"
-            f"Background context: {context[:400]}\n\n"
-            f"Requirements:\n"
-            f"- Start with a compelling introduction\n"
-            f"- Include a table of contents\n"
-            f"- Write at least 6 detailed H2 sections\n"
-            f"- Include practical code examples in fenced blocks\n"
-            f"- Add a FAQ section with 5 questions\n"
-            f"- End with a conclusion and call to action\n"
-            f"- Target length: 800-1000 words\n"
-            f"- Make it beginner-friendly but informative\n"
+            f"Background: {context[:400]}\n\n"
+            f"Include: intro, table of contents, 6 sections with code examples, "
+            f"FAQ with 5 questions, conclusion. 800-1000 words.\n"
         )
 
         content = _hf_generate(prompt)
@@ -164,8 +151,25 @@ class ArticleGenerator:
             log.info("Using template fallback for: %s", title)
             content = _template(topic, atype, context, so_qs)
 
+        # ── ALWAYS HUMANIZE ──────────────────────────────────────
+        try:
+            from humanizer import humanize, detect_ai_score
+            before  = detect_ai_score(content)
+            log.info("AI score BEFORE: %.1f", before["score"])
+            result  = humanize(content, max_passes=3)
+            content = result["text"]
+            log.info("AI score AFTER:  %.1f (passes=%d, human=%s)",
+                     result["score"], result["passes"], result["is_human"])
+            ai_score = result["score"]
+            ai_passes = result["passes"]
+        except Exception as e:
+            log.warning("Humanizer failed: %s", e)
+            ai_score  = 0
+            ai_passes = 0
+        # ─────────────────────────────────────────────────────────
+
         slug = topic.get("slug") or slugify(title)
-        meta = topic.get("description","")[:155] or f"Learn {title}: {atype} for developers."
+        meta = topic.get("description","")[:155] or f"Learn {title}: {atype}."
 
         return {
             "title":            title,
@@ -176,5 +180,6 @@ class ArticleGenerator:
             "category":         atype,
             "date":             datetime.utcnow().strftime("%Y-%m-%d"),
             "source":           topic.get("source", ""),
-            "image":            ""
-        }
+            "image":            "",
+            "ai_score":         ai_score,
+            "humanizer_passe
