@@ -21,7 +21,7 @@ layout: default
         <p class="post-description">{{ page.description }}</p>
         {% endif %}
         <div class="post-info">
-          <span class="author">✍️ {{ page.author | default: "AutoBlog" }}</span>
+          <span class="author">✍️ {{ page.author | default: "DevPulse Team" }}</span>
           <time>📅 {{ page.date | date: "%B %d, %Y" }}</time>
           <span>📖 {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
         </div>
