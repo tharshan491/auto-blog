@@ -1,8 +1,8 @@
 title: "DevPulse Blog"
-description: "Daily coding tutorials auto-generated from trending topics."
+description: ."Daily coding tutorials, guides and project ideas for developers."
 url: "https://devpulseblog.netlify.app"
 baseurl: ""
-author: "AutoBlog"
+author: DevPulse Team"
 lang: "en-US"
 theme: minima
 markdown: kramdown
