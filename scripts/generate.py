@@ -102,7 +102,7 @@ The official docs are always the best starting point for {title}.
 ### Best way to practice {title}?
 Building real projects is the most effective way to master {title}.
 """
-    src_note = f"\n> 📡 *Discovered from: **{src}***\n" if src else ""
+    src_note = ""
     return f"""# {title}: Complete {atype.title()} Guide ({year})
 {src_note}
 > **{_meta(title,atype)}**
