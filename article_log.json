@@ -245,6 +245,88 @@
         "views": 0,
         "clicks": 0
       }
+    },
+    {
+      "slug": "markitdown-python-project",
+      "title": "Markitdown – Python Project",
+      "url": "https://tharshan491.github.io/auto-blog/markitdown-python-project/",
+      "source": "github_trending",
+      "published_at": "2026-04-10T11:14:32.915993",
+      "shares": [
+        {
+          "platform": "discord",
+          "status": "ok"
+        },
+        {
+          "platform": "telegram",
+          "status": "ok"
+        },
+        {
+          "platform": "slack",
+          "status": "skipped"
+        },
+        {
+          "platform": "devto",
+          "status": "ok"
+        },
+        {
+          "platform": "mastodon",
+          "status": "skipped"
+        },
+        {
+          "platform": "bluesky",
+          "status": "skipped"
+        },
+        {
+          "platform": "medium",
+          "status": "skipped"
+        }
+      ],
+      "analytics": {
+        "views": 0,
+        "clicks": 0
+      }
+    },
+    {
+      "slug": "archon-typescript-project",
+      "title": "Archon – TypeScript Project",
+      "url": "https://tharshan491.github.io/auto-blog/archon-typescript-project/",
+      "source": "github_trending",
+      "published_at": "2026-04-10T11:14:34.551102",
+      "shares": [
+        {
+          "platform": "discord",
+          "status": "ok"
+        },
+        {
+          "platform": "telegram",
+          "status": "ok"
+        },
+        {
+          "platform": "slack",
+          "status": "skipped"
+        },
+        {
+          "platform": "devto",
+          "status": "ok"
+        },
+        {
+          "platform": "mastodon",
+          "status": "skipped"
+        },
+        {
+          "platform": "bluesky",
+          "status": "skipped"
+        },
+        {
+          "platform": "medium",
+          "status": "skipped"
+        }
+      ],
+      "analytics": {
+        "views": 0,
+        "clicks": 0
+      }
     }
   ],
   "slugs": [
@@ -253,6 +335,8 @@
     "deeptutor-python-project",
     "voxcpm-python-project",
     "opendataloader-pdf-java-project",
-    "superpowers-shell-project"
+    "superpowers-shell-project",
+    "markitdown-python-project",
+    "archon-typescript-project"
   ]
 }
